@@ -10,4 +10,5 @@ cdk.out
 !lambdas/*/*.js
 *.pem
 *.der
-*.md
+blogpost.md
+notes.md
