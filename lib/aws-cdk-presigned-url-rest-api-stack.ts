@@ -11,7 +11,7 @@ import * as path from 'path';
 
 
 export interface PresignedUrlRestApiStackProps extends StackProps {
-  readonly pubicKey: string;
+  readonly publicKey: string;
   readonly privateKeySsmPath: string;
 }
 
@@ -25,7 +25,7 @@ export class AwsCdkPresignedUrlRestApiStack extends Stack {
 
     const s3Bkt = new s3.Bucket(this, 'RandoFilesBkt');
     const pubKey = new cloudfront.PublicKey(this, 'SignedPubKey', {
-      encodedKey: props.pubicKey
+      encodedKey: props.publicKey
     });
     const cfDistribution = new cloudfront.Distribution(this, 'RandoFilesDistribution', {
       defaultBehavior: {
